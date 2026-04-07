@@ -311,7 +311,7 @@
     .tiles-2up {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0;                        /* flush — no visible seam */
+      gap: 10px;
       border-radius: var(--radius);
       overflow: hidden;              /* outer corners rounded, inner flush */
     }
@@ -733,7 +733,7 @@
     .modal-video-wrap {
       width: 100%;
       max-width: 760px;
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 9 / 16;
       background: #141414;
       border-radius: 12px;
       border: 1px solid var(--border);
@@ -923,6 +923,12 @@
 
     .vg-item:hover .vg-label { opacity: 0.9; }
 
+    /* Spanning landscape item (pinterest) */
+    .vg-item.vg-span2 {
+      grid-column: span 2;
+      aspect-ratio: 16 / 9;
+    }
+
     /* ─── VIDEO GALLERY LANDSCAPE (2×2 for TIC) ─────────────────── */
     .video-gallery-land {
       display: grid;
@@ -934,7 +940,7 @@
 
     .vg-land {
       position: relative;
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 9 / 16;
       border-radius: 10px;
       overflow: hidden;
       cursor: pointer;
@@ -1163,7 +1169,7 @@
   <!-- 1. HERO ───────────────────────────────────────────────────────── -->
   <div class="hero fade-up">
     <video autoplay muted loop playsinline
-      src="https://rosasophia.github.io/rosasophia/header.mp4"
+      src="assets/header.mp4"
       aria-hidden="true"></video>
     <div class="rings" aria-hidden="true">
       <div class="ring"></div><div class="ring"></div><div class="ring"></div>
@@ -1180,7 +1186,7 @@
   <div class="tiles-2up">
     <div class="tile fade-up" data-open="modal-circus">
       <video autoplay muted loop playsinline
-        src="https://rosasophia.github.io/rosasophia/this_is_circus_tile.mp4"
+        src="assets/this_is_circus_tile.mp4"
         aria-hidden="true"></video>
       <div class="tile-inner">
         <span class="tile-label">campaign</span>
@@ -1190,7 +1196,7 @@
 
     <div class="tile fade-up" data-open="modal-adrift" style="transition-delay:0.1s">
       <video autoplay muted loop playsinline
-        src="https://rosasophia.github.io/rosasophia/tile_adrift.mp4"
+        src="assets/tile_adrift.mp4"
         aria-hidden="true"></video>
       <div class="tile-inner">
         <span class="tile-label">show campaign</span>
@@ -1226,21 +1232,35 @@
   <!-- 5. CAPABILITIES ─────────────────────────────────────────────── -->
   <div class="banner banner-lg fade-up">
     <video autoplay muted loop playsinline
-      src="https://rosasophia.github.io/rosasophia/skills_bannersm.mp4"
+      src="assets/skills_bannersm.mp4"
       aria-hidden="true"></video>
     <div class="banner-inner">
       <p class="banner-label">capabilities</p>
       <p class="skills-text">
-        Marketing Strategy &middot; Content Strategy &middot; Creative Direction &middot; Visual Storytelling &middot; Brand Voice &amp; Messaging &middot; Content Creation &middot; Copywriting &middot; UX Content &middot; Accessibility &middot; Social Media Management &middot; Community Management &middot; End-to-End Campaign Delivery &middot; Email Marketing &amp; EDMs &middot; SEO &middot; CMS Management &middot; Information Architecture &middot; Website Management &middot; Print &amp; Digital Collateral &middot; Campaign Design &middot; Analytics &amp; Reporting &middot; Stakeholder Liaison &middot; External Partnerships &middot; Education Marketing &middot; NfP Marketing
+        Campaign strategy &amp; management &middot; Content strategy &middot; Brand management &middot; Creative direction &middot; Paid social &amp; Meta Ads &middot; Email marketing &middot; Analytics &amp; performance reporting &middot; Stakeholder communications &middot; Production &amp; execution &middot; Copywriting (social, EDM, web, long-form) &middot; Social media management &middot; Content production &middot; Photography &amp; videography direction &middot; Graphic design &middot; Live event content &middot; Back-end website management
       </p>
       <div class="banner-divider"></div>
       <div class="banner-toolkit">
         <p class="banner-toolkit-label">Toolkit</p>
-        <span class="banner-toolkit-chip">Meta</span>
         <span class="banner-toolkit-chip">TikTok</span>
+        <span class="banner-toolkit-chip">Facebook</span>
+        <span class="banner-toolkit-chip">LinkedIn</span>
+        <span class="banner-toolkit-chip">Pinterest</span>
+        <span class="banner-toolkit-chip">YouTube</span>
+        <span class="banner-toolkit-chip">Meta Business Suite</span>
+        <span class="banner-toolkit-chip">Meta Ads Manager</span>
         <span class="banner-toolkit-chip">Canva</span>
-        <span class="banner-toolkit-chip">Adobe Suite</span>
+        <span class="banner-toolkit-chip">Adobe Photoshop</span>
+        <span class="banner-toolkit-chip">Illustrator</span>
+        <span class="banner-toolkit-chip">InDesign</span>
+        <span class="banner-toolkit-chip">CapCut</span>
+        <span class="banner-toolkit-chip">Later</span>
+        <span class="banner-toolkit-chip">Mailchimp</span>
+        <span class="banner-toolkit-chip">Monday.com</span>
         <span class="banner-toolkit-chip">Notion</span>
+        <span class="banner-toolkit-chip">Google Analytics (GA4)</span>
+        <span class="banner-toolkit-chip">Shopify</span>
+        <span class="banner-toolkit-chip">Core DNA</span>
       </div>
     </div>
   </div>
@@ -1277,15 +1297,7 @@
       <img src="intro/headshot.png" alt="Rosa Sophia" />
     </div>
     <div class="modal-body">
-      <p>I'm a marketing and creative professional based in Melbourne, Naarm — specialising in campaign strategy, content creation, and brand storytelling for arts, education, and not-for-profit organisations.</p>
-      <p>With three years at NICA (National Institute of Circus Arts), I've led end-to-end campaigns, built social audiences from the ground up, and shaped how circus is seen — from corporate boardrooms to Instagram feeds.</p>
-      <p>I care deeply about work that means something. Let's make something worth sharing.</p>
-    </div>
-    <div class="modal-tags">
-      <span class="modal-tag">Marketing</span>
-      <span class="modal-tag">Creative Direction</span>
-      <span class="modal-tag">Melbourne</span>
-      <span class="modal-tag">Arts &amp; NfP</span>
+      <p>With a background spanning higher education, NFP, the arts, and live events, I've built and managed brand presence across multiple sub-brands simultaneously — handling everything from campaign strategy and creative direction to copywriting, paid social, content production, and performance reporting.</p>
     </div>
   </div>
 </div>
@@ -1303,19 +1315,12 @@
       <div class="modal-col-left">
         <div class="modal-col-video">
           <video autoplay muted loop playsinline
-            src="https://rosasophia.github.io/rosasophia/this_is_circus_tile.mp4"></video>
+            src="assets/this_is_circus_tile.mp4"></video>
         </div>
         <div class="modal-body">
           <p>A corporate campaign reframing circus as a powerful lens for business — produced for NICA Represents, NICA's corporate entertainment and team-building arm.</p>
           <p>The campaign challenged perceptions of circus as purely theatrical, repositioning it as a vehicle for leadership, resilience, and teamwork. Ran across Meta platforms with targeted reach to Melbourne's corporate sector.</p>
           <p>The campaign strategy was presented to the Committee for Melbourne as part of a broader pitch to deepen corporate engagement with the arts ecosystem.</p>
-        </div>
-        <div class="modal-tags">
-          <span class="modal-tag">Campaign Strategy</span>
-          <span class="modal-tag">Meta Ads</span>
-          <span class="modal-tag">Corporate</span>
-          <span class="modal-tag">NICA Represents</span>
-          <span class="modal-tag">Brand Positioning</span>
         </div>
       </div>
 
@@ -1357,31 +1362,24 @@
       <div class="modal-col-left">
         <div class="modal-col-video">
           <video autoplay muted loop playsinline
-            src="https://rosasophia.github.io/rosasophia/tile_adrift.mp4"></video>
+            src="assets/tile_adrift.mp4"></video>
         </div>
         <div class="modal-body">
           <p>The 2025 NICA graduate showcase — a campaign built on softness and delicacy. Adrift captured the tender, ephemeral quality of a graduating class stepping into the world.</p>
           <p>The visual identity drew from flowing, atmospheric imagery. A photoshoot produced assets used across show promotions, EDMs, and a suite of individual student Instagram posts — each with curated music chosen to mirror the feeling of each piece.</p>
           <p>Every touchpoint was treated as part of one cohesive story: from the first poster spotted on a noticeboard to the final email sitting in someone's inbox.</p>
         </div>
-        <div class="modal-tags">
-          <span class="modal-tag">Graduate Showcase</span>
-          <span class="modal-tag">Campaign Design</span>
-          <span class="modal-tag">EDM</span>
-          <span class="modal-tag">Instagram</span>
-          <span class="modal-tag">Photoshoot Direction</span>
-        </div>
       </div>
 
       <!-- Right: scrollable photo gallery -->
       <div class="modal-col-right">
         <div class="modal-gallery">
-          <img class="modal-gallery-img" src="https://rosasophia.github.io/rosasophia/adrift_1.jpg" alt="Adrift campaign photo 1" loading="lazy" />
-          <img class="modal-gallery-img" src="https://rosasophia.github.io/rosasophia/adrift_2.jpg" alt="Adrift campaign photo 2" loading="lazy" />
-          <img class="modal-gallery-img" src="https://rosasophia.github.io/rosasophia/adrift_3.jpg" alt="Adrift campaign photo 3" loading="lazy" />
-          <img class="modal-gallery-img" src="https://rosasophia.github.io/rosasophia/adrift_4.jpg" alt="Adrift campaign photo 4" loading="lazy" />
-          <img class="modal-gallery-img" src="https://rosasophia.github.io/rosasophia/adrift_5.jpg" alt="Adrift campaign photo 5" loading="lazy" />
-          <img class="modal-gallery-img" src="https://rosasophia.github.io/rosasophia/adrift_6.jpg" alt="Adrift campaign photo 6" loading="lazy" />
+          <img class="modal-gallery-img" src="ADRIFT/adrift_1.jpg" alt="Adrift campaign photo 1" loading="lazy" />
+          <img class="modal-gallery-img" src="ADRIFT/adrift_2.jpg" alt="Adrift campaign photo 2" loading="lazy" />
+          <img class="modal-gallery-img" src="ADRIFT/adrift_3.jpg" alt="Adrift campaign photo 3" loading="lazy" />
+          <img class="modal-gallery-img" src="ADRIFT/adrift_4.jpg" alt="Adrift campaign photo 4" loading="lazy" />
+          <img class="modal-gallery-img" src="ADRIFT/adrift_5.jpg" alt="Adrift campaign photo 5" loading="lazy" />
+          <img class="modal-gallery-img" src="ADRIFT/adrift_6.jpg" alt="Adrift campaign photo 6" loading="lazy" />
         </div>
       </div>
     </div>
@@ -1395,6 +1393,25 @@
     <button class="modal-close-btn" data-close="modal-social">Close</button>
     <p class="modal-eyebrow">Work</p>
     <h2 class="modal-title" id="modal-social-title">Social Media</h2>
+
+    <div class="modal-links" style="margin-bottom:28px">
+      <a href="https://www.instagram.com/nicaaustralia/" target="_blank" rel="noopener" class="modal-link-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.4" cy="6.6" r="0.9" fill="currentColor" stroke="none"/></svg>
+        @nicaaustralia &nbsp;<span style="opacity:0.45;font-size:9px">assisted &amp; created</span>
+      </a>
+      <a href="https://www.instagram.com/nicarepresents/" target="_blank" rel="noopener" class="modal-link-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.4" cy="6.6" r="0.9" fill="currentColor" stroke="none"/></svg>
+        @nicarepresents &nbsp;<span style="opacity:0.45;font-size:9px">managed &amp; created</span>
+      </a>
+      <a href="https://au.pinterest.com/nicaaustralia/" target="_blank" rel="noopener" class="modal-link-chip">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+        Pinterest &nbsp;<span style="opacity:0.45;font-size:9px">managed &amp; created</span>
+      </a>
+      <a href="https://www.tiktok.com/@nicaaustralia" target="_blank" rel="noopener" class="modal-link-chip">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.27 8.27 0 004.84 1.55V6.79a4.85 4.85 0 01-1.07-.1z"/></svg>
+        @nicaaustralia TikTok &nbsp;<span style="opacity:0.45;font-size:9px">co-managed &amp; created</span>
+      </a>
+    </div>
 
     <div class="video-gallery">
       <div class="vg-item">
@@ -1425,44 +1442,10 @@
         <img src="social/rec_ad.PNG" alt="Recruitment ad" loading="lazy" />
         <span class="vg-label">Recruitment Ad</span>
       </div>
-      <div class="vg-item">
-        <img src="social/grad_program.JPG" alt="Graduate program" loading="lazy" />
-        <span class="vg-label">Graduate Program</span>
+      <div class="vg-item vg-span2">
+        <img src="social/pinterest.jpg" alt="Pinterest content" loading="lazy" />
+        <span class="vg-label">Pinterest</span>
       </div>
-    </div>
-
-    <div class="modal-body">
-      <p>Three years of content across NICA's social ecosystem — NICA Instagram, NICA Represents, NICA Pinterest, and NICA TikTok. From planning and scripting through to filming, editing, and publishing.</p>
-      <p>On TikTok, this meant being the face and the crew: concepting, shooting, and editing short-form video content that grew NICA's presence on the platform from scratch.</p>
-      <p>On Instagram, managing multiple accounts with distinct audiences — balancing the energy of a student community against the professionalism of a corporate-facing brand. Pinterest became a visual world-building tool: curated mood boards that extended the brand beyond direct promotion.</p>
-    </div>
-
-    <div class="modal-links">
-      <a href="https://www.instagram.com/nicaaustralia/" target="_blank" rel="noopener" class="modal-link-chip">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.4" cy="6.6" r="0.9" fill="currentColor" stroke="none"/></svg>
-        @nicaaustralia &nbsp;<span style="opacity:0.45;font-size:9px">assisted &amp; created</span>
-      </a>
-      <a href="https://www.instagram.com/nicarepresents/" target="_blank" rel="noopener" class="modal-link-chip">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.4" cy="6.6" r="0.9" fill="currentColor" stroke="none"/></svg>
-        @nicarepresents &nbsp;<span style="opacity:0.45;font-size:9px">managed &amp; created</span>
-      </a>
-      <a href="https://au.pinterest.com/nicaaustralia/" target="_blank" rel="noopener" class="modal-link-chip">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
-        Pinterest &nbsp;<span style="opacity:0.45;font-size:9px">managed &amp; created</span>
-      </a>
-      <a href="https://www.tiktok.com/@nicaaustralia" target="_blank" rel="noopener" class="modal-link-chip">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.27 8.27 0 004.84 1.55V6.79a4.85 4.85 0 01-1.07-.1z"/></svg>
-        @nicaaustralia TikTok &nbsp;<span style="opacity:0.45;font-size:9px">co-managed &amp; created</span>
-      </a>
-    </div>
-
-    <div class="modal-tags" style="margin-top:20px">
-      <span class="modal-tag">TikTok</span>
-      <span class="modal-tag">Instagram</span>
-      <span class="modal-tag">Pinterest</span>
-      <span class="modal-tag">Content Strategy</span>
-      <span class="modal-tag">Video Production</span>
-      <span class="modal-tag">3 Years</span>
     </div>
   </div>
 </div>
@@ -1474,12 +1457,6 @@
     <button class="modal-close-btn" data-close="modal-copy">Close</button>
     <p class="modal-eyebrow">Work</p>
     <h2 class="modal-title" id="modal-copy-title">Copywriting</h2>
-    <div class="modal-body">
-      <p>Writing that earns its place on the page. Across three years at NICA, this has included the Collarts program page, a student careers handbook, show promotional copy, and long-form blog content.</p>
-      <p>Each project demanded a different register — from the encouraging warmth of a student-facing handbook, to the crisp, considered language of a course listing that needs to turn curiosity into enrolment.</p>
-      <p>Show copy sits at the intersection of poetry and persuasion. It has to capture the feeling of a performance before anyone has seen it — and make them want to be in the room.</p>
-    </div>
-
     <div class="show-copy-block">
       <p class="scb-eyebrow">Show Promo &mdash; Melbourne Fringe</p>
       <p class="scb-title">Now You See Me</p>
@@ -1509,14 +1486,6 @@
       </a>
     </div>
 
-    <div class="modal-tags" style="margin-top:28px">
-      <span class="modal-tag">Copywriting</span>
-      <span class="modal-tag">UX Content</span>
-      <span class="modal-tag">Blog</span>
-      <span class="modal-tag">Show Promo</span>
-      <span class="modal-tag">Education Marketing</span>
-      <span class="modal-tag">Collarts</span>
-    </div>
   </div>
 </div>
 
