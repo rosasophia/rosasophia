@@ -1120,6 +1120,61 @@
     .modal-col-left .modal-body { max-width: 100%; }
     .modal-col-left .modal-tags { margin-top: 20px; }
 
+    /* ─── RESUME OVERLAY ────────────────────────────────────────────── */
+    .resume-overlay {
+      position: fixed;
+      inset: 0;
+      background: #f0ece4;
+      z-index: 700;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .resume-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .resume-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      padding: 16px 24px;
+      background: #f0ece4;
+      border-bottom: 1px solid rgba(8, 8, 8, 0.1);
+      flex-shrink: 0;
+    }
+
+    .resume-toolbar-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 20px;
+      background: var(--bg);
+      color: var(--text);
+      border: none;
+      border-radius: 100px;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: none;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .resume-toolbar-btn:hover { opacity: 0.75; }
+
+    .resume-iframe {
+      flex: 1;
+      width: 100%;
+      border: none;
+    }
+
     /* ─── RESPONSIVE ─────────────────────────────────────────────────── */
     @media (max-width: 680px) {
       main { padding: 10px; gap: 10px; }
@@ -1163,7 +1218,7 @@
   <div class="nav-center">Rosa Sophia</div>
 
   <div class="nav-right">
-    <button class="nav-btn">Resume</button>
+    <button class="nav-btn" id="resume-btn">Resume</button>
   </div>
 </nav>
 
@@ -1209,11 +1264,6 @@
     </div>
   </div>
 
-  <!-- 3. QUOTE ─────────────────────────────────────────────────────── -->
-  <div class="quote-block fade-up">
-    <p class="quote-text">"Good marketing doesn't feel like marketing — it feels like a story worth sharing, a moment that lands before you've thought to analyse it."</p>
-    <p class="quote-attr">— Rosa Sophia</p>
-  </div>
 
   <!-- 4. SOCIAL MEDIA + COPYWRITING TILES ────────────────────────── -->
   <div class="tiles-2up">
@@ -1302,9 +1352,13 @@
       <img src="intro/headshot.png" alt="Rosa Sophia" />
     </div>
     <div class="modal-body">
-      <p>Hi! I'm Rosa — welcome to my portfolio :) In case you missed it, I'm a marketing and communications professional based in Melbourne. My background is within higher education, the arts, NFP and live entertainment.</p>
-      <p>For the sake of saving you from yet another list of skills, I'll be efficient; I've got range and the slightly unnerving audacity to believe (with my chest) that I can do anything and solve any problem. Example A. I figured out how to vibe code to make this portfolio, because complete customisation seemed fitting to the task — but also because I had the thought "…yeah I can do that" and did. Regardless, solving this problem gave me a kick, and "vibe coded + designed this website" will be added to my list of skills.</p>
-      <p>So please peruse at your convenience, and if you'd like to full on stalk — I got you, there's links. Enjoy!</p>
+      <p>Hello, welcome to my portfolio :)</p>
+      <p>In case you missed it, I'm a marketing and communications professional based in Melbourne. My background is within higher education, the arts, NFP and live entertainment.</p>
+      <p>For the sake of saving you from yet another list of skills, I'll be efficient; I've got range and the audacity to believe (with my chest) that I can do anything and solve any problem.</p>
+      <p>Example A. I figured out how to vibe code to make this portfolio, because complete customisation seemed fitting to the task — but also because I thought "…yeah I can do that" and did.</p>
+      <p>Regardless, solving this problem gave me a kick, and "vibe coded + designed this website" has been added to my list of skills.</p>
+      <p>So please peruse at your convenience, and if you're a sleuth — don't fret, there's links.</p>
+      <p>Enjoy!</p>
     </div>
   </div>
 </div>
@@ -1325,12 +1379,12 @@
             src="assets/this_is_circus_tile.mp4"></video>
         </div>
         <div class="modal-body">
-          <p>Circus is one of the oldest performing arts in the world, but centuries of evolution — from travelling tent shows to sideshow spectacle — have left it with a perception problem. Sunburst posters with clowns front and centre have run rampant, and for many, this is still circus.</p>
-          <p>The brief for NICA Represents was to close that gap. A talent agency supplying highly skilled circus artists for corporate events, the campaign needed to reframe circus entirely.</p>
-          <p>My approach was to parallel circus with what made fine art successful and valuable. Art is something rare and slightly out of reach — it carries intrigue.</p>
-          <p>The story of NICA Represents became: aspirational but accessible. Mysterious but bookable. Not selling a service, but extending an invitation into something most people didn't know they could have.</p>
-          <p>I moved from the photography approach used previously to video, leaning into motion-first content across social platforms. I produced the music myself, crafting something dreamy and pulled back to match the tone of the whole piece. The line "This is circus" was deliberately simple — obvious, but it carries strength when paired with imagery that challenges assumption.</p>
-          <p>In the months that followed, NICA Represents saw a notable increase in corporate event bookings.</p>
+          <p>Circus is one of the oldest performing arts in the world, it has been through centuries of evolution, with rich history all over the world. Despite immense historical documentation, no movie, Vogue cover, Scandinavian wall hanging, not even art nouveau has been a match to the beast that is bad graphics, offensively bright colours, sad elephants, freak shows and the slander on clowns. While the industry has far outgrown its historical clingers, for many, this is still circus.</p>
+          <p>Thus, we are left with a bit of a perception problem. The brief for NICA Represents was to close this gap. For a talent agency supplying highly skilled circus artists for corporate events, the campaign needed to reframe circus entirely.</p>
+          <p>But my approach was not to shed circus of its history, rather, to capture a little of what gave it a name in the first place. Its intrigue, the way it bends reality and flirts with the offer for you to escape it too. The story of NICA Rep then became less selling a service, more extending an invitation into something that feels ever so slightly out of reach. Mystical but bookable.</p>
+          <p>I moved from the photography approach used previously to video, leaning into motion-first content across social platforms. I produced the music myself, crafting something dreamy and pulled back to match the concept as well as my nod to the Pierrot clown dream scenes.</p>
+          <p>The line "This is circus" was deliberately simple — obvious, but it carries strength when paired with imagery that challenges assumption.</p>
+          <p>In the months that followed, NICA Represents saw a notable increase in corporate event bookings, and part of the campaign was used as the introduction of NICA to the Committee for Melbourne.</p>
         </div>
       </div>
 
@@ -1371,11 +1425,11 @@
             src="assets/tile_adrift.mp4"></video>
         </div>
         <div class="modal-body">
-          <p>Adrift was the 2023 graduating showcase for NICA's diploma students — their final performance after years of training. Each student creates their own act, tied together by the theme: adrift. To be cast adrift is not to be lost, but to be liberated.</p>
-          <p>The campaign had to honour the students as individuals, as a collective, and as artists — and sell tickets.</p>
+          <p>Adrift was the graduate showcase for NICA's diploma students. Each student created their own act, tied together by the theme: adrift; to be cast adrift is not to be lost, but to be liberated.</p>
+          <p>We wanted the campaign to honour the students as individuals, as a collective, and as artists — but also to sell tickets.</p>
           <p>The concept was led by the marketing coordinator, with the two of us co-directing the shoot, completely aligned on vision.</p>
-          <p>We focused on creating calm within moments of strength — making subtle shifts in places people don't consciously register. A softened arm, released tension in the neck. Small changes to natural motion that give a feeling of something different, even if you're not quite sure why.</p>
-          <p>That's the difference between an image that shows a performer and one that tells a story.</p>
+          <p>Our focus was capturing the strength in vulnerability and the moments in-between. We made subtle shifts in places people don't consciously register. A softened arm, a flexed foot, finding stillness in movement. In still images, small changes to natural motion give a feeling of something more, even if you're not quite sure why.</p>
+          <p>Those details are the difference between an image that shows a performer and one that tells a story and shares a feeling.</p>
           <p>The show sold out, and the response from students, staff and across socials was genuinely special to see.</p>
         </div>
       </div>
@@ -1510,6 +1564,15 @@
   </div>
 </div>
 
+
+<!-- ── RESUME OVERLAY ──────────────────────────────────────────────────── -->
+<div class="resume-overlay" id="resume-overlay">
+  <div class="resume-toolbar">
+    <a class="resume-toolbar-btn" href="assets/rosa-sophia-resume.pdf" download="Rosa-Sophia-Resume.pdf">Download</a>
+    <button class="resume-toolbar-btn" id="resume-close">Close ✕</button>
+  </div>
+  <iframe class="resume-iframe" src="assets/rosa-sophia-resume.pdf" title="Rosa Sophia — Resume"></iframe>
+</div>
 
 <!-- ── JAVASCRIPT ───────────────────────────────────────────────────────── -->
 <script>
@@ -1690,6 +1753,28 @@
     overlay.addEventListener('transitionend', () => {
       if (overlay.classList.contains('open')) initVideoGalleries();
     });
+  });
+
+  /* ── RESUME OVERLAY ───────────────────────────────────────── */
+  const resumeOverlay = document.getElementById('resume-overlay');
+  const resumeBtn     = document.getElementById('resume-btn');
+  const resumeClose   = document.getElementById('resume-close');
+
+  function openResume() {
+    resumeOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeResume() {
+    resumeOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  if (resumeBtn)   resumeBtn.addEventListener('click', openResume);
+  if (resumeClose) resumeClose.addEventListener('click', closeResume);
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && resumeOverlay.classList.contains('open')) closeResume();
   });
 
   /* ── COPY TO CLIPBOARD ─────────────────────────────────────── */
